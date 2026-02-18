@@ -12,12 +12,40 @@
   <title>Frontend Mentor | Galleria slideshow site</title>
 </head>
 
-<body>
+<body class="w-screen min-h-screen flex flex-col gap-6 md:gap-10 pt-6 md:pt-7.5 lg:pt-10 pb-10">
+  <!-- Header -->
+  <header
+    class="w-full lg:w-[95%] mx-auto px-6 md:px-10 lg:px-0 flex items-center justify-between pb-6 border-b border-b-[#e5e5e5]">
+    <a href="/">
+      <img class="w-28 h-8 lg:w-42.5 lg:h-12" src="./assets/shared/logo.svg" alt="logo">
+    </a>
+    <button
+      class="text-[9px] md:text-[12px] text-gray-400 font-bold leading-[125%] tracking-[2px] md:tracking-[2.5px] uppercase cursor-pointer">
+      Start Slideshow
+    </button>
+  </header>
+  <!-- Main -->
+  <main class="w-8/10 md:w-[85.94%] lg:w-[94.44%] mx-auto">
+    <ul id="gallery" class="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+      <li class="relative h-62.5">
+        <img class="w-full h-full" src="./assets/starry-night/hero-small.jpg" alt="">
+        <button class="absolute inset-0 flex items-end">
+          <div class="flex flex-col w-full z-50 h-42.5 bg-linear-to-t from-black justify-end p-8 gap-2">
+            <p class="text-[24px] text-white text-left font-bold leading-[125%] tracking-[0px]">
+              Starry Night
+            </p>
+            <p class="text-[13px] text-white text-left leading-[125%] tracking-[0px] font-normal">
+              Vincent Van Gogh
+            </p>
+          </div>
+        </button>
+      </li>
 
-  <h1 class="text-3xl font-bold underline">
-    Hello world!
-  </h1>
-  Start slideshow
+    </ul>
+  </main>
+
+
+  <!-- Start slideshow
 
   Starry Night
   Vincent Van Gogh
@@ -62,7 +90,7 @@
   Leonardo da Vinci
 
   The Swing
-  Jean-Honoré Fragonard
+  Jean-Honoré Fragonard -->
 </body>
 
 </html>
