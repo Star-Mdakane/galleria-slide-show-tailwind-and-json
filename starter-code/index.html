@@ -12,7 +12,8 @@
   <title>Frontend Mentor | Galleria slideshow site</title>
 </head>
 
-<body class="max-w-360 mx-auto w-screen min-h-screen flex flex-col gap-6 md:gap-10 pt-6 md:pt-7.5 lg:pt-10 pb-10">
+<body
+  class="relative max-w-360 mx-auto w-screen min-h-screen flex flex-col gap-6 md:gap-10 pt-6 md:pt-7.5 lg:pt-10 pb-10">
   <!-- Header -->
   <header
     class="w-full lg:w-[95%] mx-auto px-6 md:px-10 lg:px-0 flex items-center justify-between pb-6 border-b border-b-[#e5e5e5]">
@@ -20,16 +21,78 @@
       <img class="w-28 h-8 lg:w-42.5 lg:h-12" src="./assets/shared/logo.svg" alt="logo">
     </a>
     <button
-      class="text-[9px] md:text-[12px] text-gray-400 font-bold leading-[125%] tracking-[2px] md:tracking-[2.5px] uppercase cursor-pointer">
+      class="text-[9px] md:text-[12px] text-gray-400 font-bold leading-[125%] tracking-[2px] md:tracking-[2.5px] uppercase hover:text-black  cursor-pointer">
       Start Slideshow
     </button>
   </header>
+  <!-- Slideshow -->
+  <div class="fixed flex flex-col left-0 top-0 w-screen h-screen z-70 bg-white pt-10">
+    <!-- Content -->
+    <section class="flex flex-col flex-1">
+      <!-- Slideshow Header -->
+      <header
+        class="w-full lg:w-[95%] mx-auto px-6 md:px-10 lg:px-0 flex items-center justify-between pb-6 border-b border-b-[#e5e5e5]">
+        <a href="/">
+          <img class="w-28 h-8 lg:w-42.5 lg:h-12" src="./assets/shared/logo.svg" alt="logo">
+        </a>
+        <button
+          class="text-[9px] md:text-[12px] text-gray-400 font-bold leading-[125%] tracking-[2px] md:tracking-[2.5px] uppercase hover:text-black  cursor-pointer">
+          Stop Slideshow
+        </button>
+      </header>
+    </section>
+
+    <!-- Footer -->
+    <div class="w-full flex flex-col h-18 md:h-24">
+      <!-- Slider -->
+      <div id="slider">
+        <input
+          class="w-full appearance-none h-1 bg-[#e7e7e7] accent-gray-400 cursor-pointer bg-[linear-gradient(to_right,#9ca3af_46%,#e7e7e7_46%)] [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-runnable-track]:bg-[#e7e7e7] [&::-webkit-slider-runnable-track]:rounded-full [&::-moz-range-track]:bg-[#e7e7e7] [&::-moz-range-track]:rounded-full"
+          type="range" name="slider" id="slider" min="1" max="15" value="7">
+      </div>
+      <!-- footer content -->
+      <div class="max-w-full h-full flex items-center justify-between mx-auto w-[87.2%] md:w-[89.45%] lg:w-[94.44%]">
+        <!-- Art detail -->
+        <div class="flex flex-col md:gap-1.5 mb-2">
+          <p id="art-name" class="text-[14px] md:text-[18px] text-black leading-[200%] md:leading-[125%] font-bold">
+            Starry Night
+          </p>
+          <p id="atrist-name" class="text-[10px] md:text-[13px] text-gray-400 leading-[120%] md:leading-[125%]">
+            Vincent Van Gogh
+          </p>
+        </div>
+        <!-- buttons -->
+        <div class="flex justify-center gap-6 md:gap-10 w-14.5 md:w-22.5">
+          <button id="prev" class="w-4 h-4 md:w-6 md:h-6 cursor-pointer group">
+            <svg class="w-full h-full" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+              <g stroke="#000" fill="none" fill-rule="evenodd">
+                <path d="M24.166 1.843L3.627 12.113l20.539 10.269V1.843z" stroke-width="2"
+                  class="group-hover:stroke-gray-300" />
+                <path fill="#D8D8D8" d="M.986.5h-1v22.775h1z" class="group-hover:stroke-gray-300" />
+              </g>
+            </svg>
+          </button>
+          <button id="next" class="w-4 h-4 md:w-6 md:h-6 cursor-pointer group">
+            <svg class="w-full h-full" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+              <g stroke="#000" fill="none" fill-rule="evenodd">
+                <path d="M1.528 1.843l20.538 10.27L1.528 22.382V1.843z" stroke-width="2"
+                  class="group-hover:stroke-gray-300" />
+                <path fill="#D8D8D8" d="M24.708.5h1v22.775h-1z" class="group-hover:stroke-gray-300" />
+              </g>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
   <!-- Main -->
   <main class="w-[82.67%] md:w-[85.94%] lg:w-[94.44%] mx-auto">
+    <!-- Gallery -->
     <ul id="gallery" class="w-full columns-1 md:columns-2 lg:columns-4 gap-10 space-y-10 [writing-mode:horizontal-tb]">
-      <li class="relative h-62.5">
+      <li class="relative h-62.5 hover:opacity-50">
         <img class="block w-full h-full" src="./assets/starry-night/hero-small.jpg" alt="">
-        <button class="absolute inset-0 flex items-end">
+        <button class="absolute inset-0 flex items-end cursor-pointer">
           <div class="flex flex-col w-full z-50 h-42.5 bg-linear-to-t from-black justify-end p-8 gap-2">
             <p class="text-[24px] text-white text-left font-bold leading-[125%] tracking-[0px]">
               Starry Night
@@ -40,9 +103,9 @@
           </div>
         </button>
       </li>
-      <li class="relative h-100">
+      <li class="relative h-100 hover:opacity-50">
         <img class="block w-full h-full object-cover" src="./assets/girl-with-pearl-earring/gallery.jpg" alt="">
-        <button class="absolute inset-0 flex items-end">
+        <button class="absolute inset-0 flex items-end cursor-pointer">
           <div class="flex flex-col w-full z-50 h-42.5 bg-linear-to-t from-black justify-end p-8 gap-2">
             <p class="text-[24px] text-white text-left font-bold leading-[125%] tracking-[0px]">
               Girl with a Pearl Earing
@@ -53,9 +116,9 @@
           </div>
         </button>
       </li>
-      <li class="relative h-71.25">
+      <li class="relative h-71.25 hover:opacity-50">
         <img class="block w-full h-full object-cover" src="./assets/guernica/hero-small.jpg" alt="">
-        <button class="absolute inset-0 flex items-end">
+        <button class="absolute inset-0 flex items-end cursor-pointer">
           <div class="flex flex-col w-full z-50 h-42.5 bg-linear-to-t from-black justify-end p-8 gap-2">
             <p class="text-[24px] text-white text-left font-bold leading-[125%] tracking-[0px]">
               Guernica
@@ -66,9 +129,9 @@
           </div>
         </button>
       </li>
-      <li class="relative h-62.5">
+      <li class="relative h-62.5 hover:opacity-50">
         <img class="block w-full h-full object-cover" src="./assets/penitent-magdalene/hero-small.jpg" alt="">
-        <button class="absolute inset-0 flex items-end">
+        <button class="absolute inset-0 flex items-end cursor-pointer">
           <div class="flex flex-col w-full z-50 h-42.5 bg-linear-to-t from-black justify-end p-8 gap-2">
             <p class="text-[24px] text-white text-left font-bold leading-[125%] tracking-[0px]">
               Penitent Magdeline
@@ -79,10 +142,10 @@
           </div>
         </button>
       </li>
-      <li class="relative h-85">
+      <li class="relative h-85 hover:opacity-50">
         <img class="block w-full h-full object-cover" src="./assets/the-storm-on-the-sea-of-galilee/hero-small.jpg"
           alt="">
-        <button class="absolute inset-0 flex items-end">
+        <button class="absolute inset-0 flex items-end cursor-pointer">
           <div class="flex flex-col w-full z-50 h-42.5 bg-linear-to-t from-black justify-end p-8 gap-2">
             <p class="text-[24px] text-white text-left font-bold leading-[125%] tracking-[0px]">
               The Storm on the Sea of Galilee
@@ -93,9 +156,9 @@
           </div>
         </button>
       </li>
-      <li class="relative h-70">
+      <li class="relative h-70 hover:opacity-50">
         <img class="block w-full h-full object-cover" src="./assets/the-great-wave-off-kanagawa/hero-small.jpg" alt="">
-        <button class="absolute inset-0 flex items-end">
+        <button class="absolute inset-0 flex items-end cursor-pointer">
           <div class="flex flex-col w-full z-50 h-42.5 bg-linear-to-t from-black justify-end p-8 gap-2">
             <p class="text-[24px] text-white text-left font-bold leading-[125%] tracking-[0px]">
               The Great Wave off Kanagawa
@@ -106,9 +169,9 @@
           </div>
         </button>
       </li>
-      <li class="relative h-125">
+      <li class="relative h-125 hover:opacity-50">
         <img class="block w-full h-full object-cover" src="./assets/van-gogh-self-portrait/thumbnail.jpg" alt="">
-        <button class="absolute inset-0 flex items-end">
+        <button class="absolute inset-0 flex items-end cursor-pointer">
           <div class="flex flex-col w-full z-50 h-42.5 bg-linear-to-t from-black justify-end p-8 gap-2">
             <p class="text-[24px] text-white text-left font-bold leading-[125%] tracking-[0px]">
               Van Gogh self-portrait
@@ -119,9 +182,9 @@
           </div>
         </button>
       </li>
-      <li class="relative h-62.5">
+      <li class="relative h-62.5 hover:opacity-50">
         <img class="block w-full h-full object-cover" src="./assets/the-sleeping-gypsy/hero-small.jpg" alt="">
-        <button class="absolute inset-0 flex items-end">
+        <button class="absolute inset-0 flex items-end cursor-pointer">
           <div class="flex flex-col w-full z-50 h-42.5 bg-linear-to-t from-black justify-end p-8 gap-2">
             <p class="text-[24px] text-white text-left font-bold leading-[125%] tracking-[0px]">
               The Sleeping Gypsy
@@ -132,9 +195,9 @@
           </div>
         </button>
       </li>
-      <li class="relative h-105">
+      <li class="relative h-105 hover:opacity-50">
         <img class="block w-full h-full object-cover" src="./assets/lady-with-an-ermine/thumbnail.jpg" alt="">
-        <button class="absolute inset-0 flex items-end">
+        <button class="absolute inset-0 flex items-end cursor-pointer">
           <div class="flex flex-col w-full z-50 h-42.5 bg-linear-to-t from-black justify-end p-8 gap-2">
             <p class="text-[24px] text-white text-left font-bold leading-[125%] tracking-[0px]">
               Lady with an Erminn
@@ -145,9 +208,9 @@
           </div>
         </button>
       </li>
-      <li class="relative h-65">
+      <li class="relative h-65 hover:opacity-50">
         <img class="block w-full h-full object-cover" src="./assets/the-night-cafe/hero-small.jpg" alt="">
-        <button class="absolute inset-0 flex items-end">
+        <button class="absolute inset-0 flex items-end cursor-pointer">
           <div class="flex flex-col w-full z-50 h-42.5 bg-linear-to-t from-black justify-end p-8 gap-2">
             <p class="text-[24px] text-white text-left font-bold leading-[125%] tracking-[0px]">
               The Night Café
@@ -158,9 +221,9 @@
           </div>
         </button>
       </li>
-      <li class="relative h-107.5">
+      <li class="relative h-107.5 hover:opacity-50">
         <img class="block w-full h-full object-cover" src="./assets/the-basket-of-apples/thumbnail.jpg" alt="">
-        <button class="absolute inset-0 flex items-end">
+        <button class="absolute inset-0 flex items-end cursor-pointer">
           <div class="flex flex-col w-full z-50 h-42.5 bg-linear-to-t from-black justify-end p-8 gap-2">
             <p class="text-[24px] text-white text-left font-bold leading-[125%] tracking-[0px]">
               The Basket of Apples
@@ -171,9 +234,9 @@
           </div>
         </button>
       </li>
-      <li class="relative h-65 ">
+      <li class="relative h-65 hover:opacity-50 ">
         <img class="block w-full h-full object-cover" src="./assets/the-boy-in-the-red-vest/hero-small.jpg" alt="">
-        <button class="absolute inset-0 flex items-end">
+        <button class="absolute inset-0 flex items-end cursor-pointer">
           <div class="flex flex-col w-full z-50 h-42.5 bg-linear-to-t from-black justify-end p-8 gap-2">
             <p class="text-[24px] text-white text-left font-bold leading-[125%] tracking-[0px]">
               The Boy in the Red Vest
@@ -184,9 +247,9 @@
           </div>
         </button>
       </li>
-      <li class="relative h-82.5">
+      <li class="relative h-82.5 hover:opacity-50">
         <img class="block w-full h-full object-cover" src="./assets/arnolfini-portrait/thumbnail.jpg" alt="">
-        <button class="absolute inset-0 flex items-end">
+        <button class="absolute inset-0 flex items-end cursor-pointer">
           <div class="flex flex-col w-full z-50 h-42.5 bg-linear-to-t from-black justify-end p-8 gap-2">
             <p class="text-[24px] text-white text-left font-bold leading-[125%] tracking-[0px]">
               Arnolfini Portrait
@@ -197,9 +260,9 @@
           </div>
         </button>
       </li>
-      <li class="relative h-131.25">
+      <li class="relative h-131.25 hover:opacity-50">
         <img class="block w-full h-full object-cover" src="./assets/mona-lisa/thumbnail.jpg" alt="">
-        <button class="absolute inset-0 flex items-end">
+        <button class="absolute inset-0 flex items-end cursor-pointer">
           <div class="flex flex-col w-full z-50 h-42.5 bg-linear-to-t from-black justify-end p-8 gap-2">
             <p class="text-[24px] text-white text-left font-bold leading-[125%] tracking-[0px]">
               Mona Lisa
@@ -210,9 +273,9 @@
           </div>
         </button>
       </li>
-      <li class="relative h-85">
+      <li class="relative h-85 hover:opacity-50">
         <img class="block w-full h-full object-cover" src="./assets/the-swing/hero-small.jpg" alt="">
-        <button class="absolute inset-0 flex items-end">
+        <button class="absolute inset-0 flex items-end cursor-pointer">
           <div class="flex flex-col w-full z-50 h-42.5 bg-linear-to-t from-black justify-end p-8 gap-2">
             <p class="text-[24px] text-white text-left font-bold leading-[125%] tracking-[0px]">
               The Swing
