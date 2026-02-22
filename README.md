@@ -46,6 +46,13 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - Live Site URL: [Add live site URL here](https://your-live-site-url.com)
 
 ## My process
+1. My planning was that...Initially I looked at the layout and came out with its design.
+- The header was simple, nothing complicated
+2. I then came to the gallery. I thought if I should use a div with buttons on an ul but decided on the ul.
+- Initially palcig a pic on the gallery I thought I would bring it in via fetch but seeing it containing different sizes I had to make it independentl.
+- Comes the hard part but I thought it was simple. Used grid on mobile display and it was perfect. Moving on to larger screens came with the white spaces. 
+- I attempted many things to to clear the white space including grid-auto-rows, changed the layout to flex, even experimental grid masonry to no avail. The closest was ccolumn but it had its flaw of not allowing me to move it in a particulr direction or order but I chose it since it was the closest to the solution.
+3. I then moved to the gallery screen.Straight forward design but it needs you to take you time and be patient or you will come up wih silly errors.
 
 ### Built with
 
