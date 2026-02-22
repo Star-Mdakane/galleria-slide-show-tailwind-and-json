@@ -53,6 +53,7 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - Comes the hard part but I thought it was simple. Used grid on mobile display and it was perfect. Moving on to larger screens came with the white spaces. 
 - I attempted many things to to clear the white space including grid-auto-rows, changed the layout to flex, even experimental grid masonry to no avail. The closest was ccolumn but it had its flaw of not allowing me to move it in a particulr direction or order but I chose it since it was the closest to the solution.
 3. I then moved to the gallery screen.Straight forward design but it needs you to take you time and be patient or you will come up wih silly errors.
+4. I encountered no challenges from designing one screen size to another.
 
 ### Built with
 
