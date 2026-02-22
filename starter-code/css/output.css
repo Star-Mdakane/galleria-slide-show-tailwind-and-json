@@ -575,9 +575,6 @@
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
     transition-duration: var(--tw-duration, var(--default-transition-duration));
   }
-  .\[writing-mode\:horizontal-tb\] {
-    writing-mode: horizontal-tb;
-  }
   .group-hover\:stroke-gray-300 {
     &:is(:where(.group):hover *) {
       @media (hover: hover) {
