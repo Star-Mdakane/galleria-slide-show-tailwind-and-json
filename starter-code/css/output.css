@@ -542,9 +542,6 @@
     --tw-tracking: 2px;
     letter-spacing: 2px;
   }
-  .whitespace-nowrap {
-    white-space: nowrap;
-  }
   .text-black {
     color: var(--color-black);
   }
@@ -854,11 +851,6 @@
     @media (width >= 48rem) {
       --tw-tracking: 2.5px;
       letter-spacing: 2.5px;
-    }
-  }
-  .md\:whitespace-normal {
-    @media (width >= 48rem) {
-      white-space: normal;
     }
   }
   .lg\:top-5 {

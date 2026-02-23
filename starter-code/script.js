@@ -4,6 +4,7 @@ const gallery = document.querySelectorAll("#gallery li");
 const startSlideshowBtn = document.getElementById("slideshow-start");
 const stopSlideshowBtn = document.getElementById("slideshow-stop");
 const viewImageBtn = document.getElementById("overlay-open");
+const closeOverlayImageBtn = document.getElementById("overlay-close");
 const imageSourceBtn = document.getElementById("image-source");
 const prevBtn = document.getElementById("prev");
 const nextBtn = document.getElementById("next");
@@ -52,61 +53,85 @@ const loadData = async () => {
 loadData();
 
 const openSlideshow = (paintings) => {
-    console.log(paintings)
-
-
-
 
     gallery.forEach((btn, index) => {
-        const art = paintings[index];
         btn.addEventListener("click", (e) => {
             const slideGroup = e.target.closest(".group\\/slide");
 
-            populateSlideshow(slideGroup, art);
-
+            populateSlideshow(e, slideGroup, index, paintings);
         })
     })
 
     startSlideshowBtn.addEventListener("click", (e) => {
         const slideGroup = e.target.closest(".group\\/slide");
-        // const slide = paintings[0]
         startSlideshow(slideGroup, paintings);
     })
 }
 
-const populateSlideshow = (slideGroup, art) => {
-    slideGroup.classList.add("start");
-    // console.log(index);
-    // console.log(art);
+const populateSlideshow = (e, slideGroup, index, paintings) => {
 
-    artName.textContent = art.name;
-    footerArtName.textContent = art.name;
-    artistName.textContent = art.artist.name;
-    footerArtistName.textContent = art.artist.name;
-    description.textContent = art.description;
-    artYear.textContent = art.year;
-    authorImage.src = art.artist.image;
-    if (window.matchMedia('(max-width: 768px)').matches) {
-        slideshowImage.src = art.images.gallery;
-    } else {
-        slideshowImage.src = art.images.hero.large;
+    slideGroup.classList.add("start");
+    let slideIndex = index;
+    // let art = paintings[index];
+
+    const updateSlide = () => {
+        const art = paintings[slideIndex]
+
+        artName.textContent = art.name;
+        footerArtName.textContent = art.name;
+        artistName.textContent = art.artist.name;
+        footerArtistName.textContent = art.artist.name;
+        description.textContent = art.description;
+        artYear.textContent = art.year;
+        authorImage.src = art.artist.image;
+        if (window.matchMedia('(max-width: 768px)').matches) {
+            slideshowImage.src = art.images.gallery;
+        } else {
+            slideshowImage.src = art.images.hero.large;
+        }
     }
-}
+
+    updateSlide();
+
+    viewImageBtn.addEventListener("click", (e) => {
+        const overlayGroup = e.target.closest(".group\\/ovl");
+        overlayGroup.classList.add("open");
+        overlayImage.src = paintings[index].images.hero.large;
+    })
+
+    closeOverlayImageBtn.addEventListener("click", (e) => {
+        const overlayGroup = e.target.closest(".group\\/ovl");
+        overlayGroup.classList.remove("open");
+    })
+
+    nextBtn.addEventListener("click", () => {
+        if (slideIndex < paintings.length - 1) {
+            slideIndex++;
+
+            updateSlide();
+        }
+    });
+
+    prevBtn.addEventListener("click", () => {
+
+        if (slideIndex > 0) {
+            slideIndex--;
+
+            updateSlide();
+        }
+    });
+};
 
 const startSlideshow = (slideGroup, paintings) => {
     slideGroup.classList.add("start");
 
-    // clearInterval(through);
-
-
     const slideInterval = setInterval(() => {
-        if (currentIndex >= 14) {
+        if (currentIndex > 14) {
             clearInterval(slideInterval);
+            slideGroup.classList.remove("start");
+            currentIndex = 0;
             return;
         }
-
-        currentIndex++;
-        console.log(currentIndex);
 
         let slide = paintings[currentIndex]
 
@@ -123,7 +148,19 @@ const startSlideshow = (slideGroup, paintings) => {
             slideshowImage.src = slide.images.hero.large;
         }
 
-    }, 3000)
+        currentIndex++;
 
+
+    }, 3000);
 
 }
+
+const stopSlideshow = (e) => {
+
+}
+
+stopSlideshowBtn.addEventListener("click", (e) => {
+    const slideGroup = e.target.closest(".group\\/slide");
+    slideGroup.classList.remove("start");
+})
+
