@@ -54,6 +54,10 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - I attempted many things to to clear the white space including grid-auto-rows, changed the layout to flex, even experimental grid masonry to no avail. The closest was ccolumn but it had its flaw of not allowing me to move it in a particulr direction or order but I chose it since it was the closest to the solution.
 3. I then moved to the gallery screen.Straight forward design but it needs you to take you time and be patient or you will come up wih silly errors.
 4. I encountered no challenges from designing one screen size to another.
+5. Designing the slideshow I first had to design the image title and autor name whereby I thought I would use negative margin but I had to settle for absolute position.
+6. The year I also had to make absolute while the description was static in the content box. 
+7. Sliideshow button was simple.
+8. The buttons were a bit complicated since I had to move some props on the functions while selecting the parent group was a nightmare.
 
 ### Built with
 
