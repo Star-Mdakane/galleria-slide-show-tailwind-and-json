@@ -97,11 +97,16 @@ const populateSlideshow = (e, slideGroup, index, paintings) => {
         const overlayGroup = e.target.closest(".group\\/ovl");
         overlayGroup.classList.add("open");
         overlayImage.src = paintings[index].images.hero.large;
-    })
+    });
 
     closeOverlayImageBtn.addEventListener("click", (e) => {
         const overlayGroup = e.target.closest(".group\\/ovl");
         overlayGroup.classList.remove("open");
+    });
+
+    imageSourceBtn.addEventListener("click", (e) => {
+        const slideGroup = e.target.closest(".group\\/slide");
+        slideGroup.classList.remove("start");
     })
 
     nextBtn.addEventListener("click", () => {
