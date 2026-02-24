@@ -58,16 +58,6 @@ const openSlideshow = (paintings) => {
         btn.addEventListener("click", (e) => {
             const slideGroup = e.target.closest(".group\\/slide");
 
-            // if (index === 0) {
-            //     console.log(index);
-            //     prevBtn.classList.add("group-hover");
-            // } else if (index === 14) {
-            //     nextBtn.classList.add("group-hover");
-            // } else {
-            //     prevBtn.classList.remove("group-hover");
-            //     nextBtn.classList.remove("group-hover");
-            // }
-
             populateSlideshow(e, slideGroup, index, paintings);
         })
     })
@@ -82,7 +72,7 @@ const populateSlideshow = (e, slideGroup, index, paintings) => {
 
     slideGroup.classList.add("start");
     let slideIndex = index;
-    // let art = paintings[index];
+
 
     const updateSlide = () => {
         const art = paintings[slideIndex]
@@ -119,9 +109,19 @@ const populateSlideshow = (e, slideGroup, index, paintings) => {
         slideGroup.classList.remove("start");
     })
 
+    const slider = document.getElementById('slider');
+
+    const updateSliderBg = () => {
+        const slideVal = ((slideIndex + 1) / (paintings.length)) * 100;
+        slider.style.background = `linear-gradient(to right, #9ca3af ${slideVal}%, #e7e7e7 ${slideVal}%)`;
+    };
+
     nextBtn.addEventListener("click", () => {
         if (slideIndex < paintings.length - 1) {
             slideIndex++;
+            updateSliderBg();
+            slider.value = slideIndex;
+
             updateSlide();
         } else if (slideIndex == 14) {
             nextBtn.classList.add("isActive");
@@ -134,6 +134,11 @@ const populateSlideshow = (e, slideGroup, index, paintings) => {
 
         if (slideIndex > 0) {
             slideIndex--;
+            updateSliderBg();
+            slider.value = slideIndex;
+
+            console.log(slideIndex);
+
             updateSlide();
         } else if (slideIndex == 0) {
             prevBtn.classList.add("isActive");

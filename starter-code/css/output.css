@@ -448,8 +448,14 @@
     }
     background-image: linear-gradient(var(--tw-gradient-stops));
   }
-  .bg-\[linear-gradient\(to_right\,\#9ca3af_46\%\,\#e7e7e7_46\%\)\] {
-    background-image: linear-gradient(to right,#9ca3af 46%,#e7e7e7 46%);
+  .bg-\[linear-gradient\(to_right\,\#9ca3af\,\#e7e7e7\)\] {
+    background-image: linear-gradient(to right,#9ca3af,#e7e7e7);
+  }
+  .bg-\[linear-gradient\(to_right\,\#9ca3af_0\%\,\#e7e7e7_100\%\)\] {
+    background-image: linear-gradient(to right,#9ca3af 0%,#e7e7e7 100%);
+  }
+  .bg-\[linear-gradient\(to_right\,\#9ca3af_6\.7\%\,\#e7e7e7_6\.7\%\)\] {
+    background-image: linear-gradient(to right,#9ca3af 6.7%,#e7e7e7 6.7%);
   }
   .from-black {
     --tw-gradient-from: var(--color-black);
