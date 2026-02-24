@@ -178,6 +178,9 @@
   .relative {
     position: relative;
   }
+  .static {
+    position: static;
+  }
   .inset-0 {
     inset: calc(var(--spacing) * 0);
   }
@@ -577,6 +580,11 @@
       @media (hover: hover) {
         stroke: var(--color-gray-300);
       }
+    }
+  }
+  .group-\[\.isActive\]\:stroke-gray-300 {
+    &:is(:where(.group):is(.isActive) *) {
+      stroke: var(--color-gray-300);
     }
   }
   .group-\[\.open\]\/ovl\:scale-100 {

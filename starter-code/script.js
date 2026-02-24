@@ -58,6 +58,16 @@ const openSlideshow = (paintings) => {
         btn.addEventListener("click", (e) => {
             const slideGroup = e.target.closest(".group\\/slide");
 
+            // if (index === 0) {
+            //     console.log(index);
+            //     prevBtn.classList.add("group-hover");
+            // } else if (index === 14) {
+            //     nextBtn.classList.add("group-hover");
+            // } else {
+            //     prevBtn.classList.remove("group-hover");
+            //     nextBtn.classList.remove("group-hover");
+            // }
+
             populateSlideshow(e, slideGroup, index, paintings);
         })
     })
@@ -112,18 +122,23 @@ const populateSlideshow = (e, slideGroup, index, paintings) => {
     nextBtn.addEventListener("click", () => {
         if (slideIndex < paintings.length - 1) {
             slideIndex++;
-
             updateSlide();
+        } else if (slideIndex == 14) {
+            nextBtn.classList.add("isActive");
         }
+        prevBtn.classList.remove("isActive");
+
     });
 
     prevBtn.addEventListener("click", () => {
 
         if (slideIndex > 0) {
             slideIndex--;
-
             updateSlide();
+        } else if (slideIndex == 0) {
+            prevBtn.classList.add("isActive");
         }
+        nextBtn.classList.remove("isActive");
     });
 };
 
