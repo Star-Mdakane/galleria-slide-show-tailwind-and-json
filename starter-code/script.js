@@ -71,6 +71,7 @@ const openSlideshow = (paintings) => {
 const populateSlideshow = (e, slideGroup, index, paintings) => {
 
     slideGroup.classList.add("start");
+    document.body.classList.add('overflow-hidden');
     let slideIndex = index;
 
 
@@ -96,17 +97,20 @@ const populateSlideshow = (e, slideGroup, index, paintings) => {
     viewImageBtn.addEventListener("click", (e) => {
         const overlayGroup = e.target.closest(".group\\/ovl");
         overlayGroup.classList.add("open");
+        slideshow.classList.add('overflow-hidden');
         overlayImage.src = paintings[index].images.hero.large;
     });
 
     closeOverlayImageBtn.addEventListener("click", (e) => {
         const overlayGroup = e.target.closest(".group\\/ovl");
         overlayGroup.classList.remove("open");
+        slideshow.classList.remove('overflow-hidden');
     });
 
     imageSourceBtn.addEventListener("click", (e) => {
         const slideGroup = e.target.closest(".group\\/slide");
         slideGroup.classList.remove("start");
+        document.body.classList.remove('overflow-hidden');
     })
 
     const slider = document.getElementById('slider');
@@ -149,11 +153,13 @@ const populateSlideshow = (e, slideGroup, index, paintings) => {
 
 const startSlideshow = (slideGroup, paintings) => {
     slideGroup.classList.add("start");
+    document.body.classList.add('overflow-hidden');
 
     const slideInterval = setInterval(() => {
         if (currentIndex > 14) {
             clearInterval(slideInterval);
             slideGroup.classList.remove("start");
+            document.body.classList.remove('overflow-hidden');
             currentIndex = 0;
             return;
         }
@@ -187,5 +193,8 @@ const stopSlideshow = (e) => {
 stopSlideshowBtn.addEventListener("click", (e) => {
     const slideGroup = e.target.closest(".group\\/slide");
     slideGroup.classList.remove("start");
+    document.body.classList.remove('overflow-hidden');
 })
+
+
 
