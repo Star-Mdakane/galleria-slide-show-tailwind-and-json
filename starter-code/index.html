@@ -27,16 +27,16 @@
   </header>
   <!-- Slideshow -->
   <div id="slideshow"
-    class="fixed flex flex-col left-0 top-0 w-screen min-h-screen z-20 bg-white scale-0 opacity-0 group-[.start]/slide:scale-100 group-[.start]/slide:opacity-100 transition group/ovl">
+    class="fixed flex flex-col left-0 top-0 w-screen min-h-full inset-0 h-dvh overflow-y-auto z-20 bg-white scale-0 opacity-0 group-[.start]/slide:scale-100 group-[.start]/slide:opacity-100 transition group/ovl">
     <!-- Content -->
     <main class="flex flex-col mb-20 lg:gap-24">
       <!-- Overlay -->
       <div
-        class="absolute z-50 w-full h-screen mb-10 bg-black/90 flex items-center justify-center scale-0 opacity-0 group-[.open]/ovl:scale-100 group-[.open]/ovl:opacity-100 transition">
+        class="absolute z-50 w-full h-dvh mb-10 overflow-hidden bg-black/90 flex items-center justify-center scale-0 opacity-0 group-[.open]/ovl:scale-100 group-[.open]/ovl:opacity-100 transition">
         <!-- overlay content -->
         <div id="overlay" class="flex flex-col gap-6 md:gap-8 mx-auto my-auto w-[87.2%] md:w-[87.24%] lg:w-[63.68%]">
           <button id="overlay-close"
-            class="text-[14px] text-white text-right leading-[200%] tracking-[0px] uppercase cursor-pointer">
+            class="text-[14px] text-white text-right leading-[200%] tracking-[0px] uppercase cursor-pointer hover:text-white/10">
             Close
           </button>
           <div class="w-full z-60">
@@ -67,7 +67,7 @@
             <img id="slideshow__image" class="block w-full h-full object-cover"
               src="./assets/starry-night/hero-large.jpg" alt="">
             <button id="overlay-open"
-              class="absolute flex w-38 z-10 h-10 bg-black gap-4 items-center justify-center left-4 top-4 md:top-auto md:bottom-4 cursor-pointer">
+              class="absolute flex w-38 z-10 h-10 bg-black gap-4 items-center justify-center left-4 top-4 md:top-auto md:bottom-4 hover:bg-white/30 cursor-pointer">
               <img class="w-3 h-3" src="./assets/shared/icon-view-image.svg" alt="">
               <p class="text-[10px] text-white leading-[120%] tracking-[2px] font-bold uppercase">
                 View image

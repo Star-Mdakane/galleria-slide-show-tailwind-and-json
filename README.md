@@ -58,7 +58,8 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 6. The year I also had to make absolute while the description was static in the content box. 
 7. Sliideshow button was simple.
 8. The buttons were a bit complicated since I had to move some props on the functions while selecting the parent group was a nightmare.
-9. The slider gave me a bit of a run around. I tried addinng the bckground via javascript and upodate the class. Went around in that vain till I decided to simplify everything.
+9. The slider gave me a bit of a run around. I tried addinng the background via javascript and upodate the class. Went around in that vain till I decided to simplify everything.
+10. I ended up using a simple way of adding the values.
 
 ### Built with
 
