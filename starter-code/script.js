@@ -78,6 +78,11 @@ const populateSlideshow = (e, slideGroup, index, paintings) => {
     const updateSlide = () => {
         const art = paintings[slideIndex]
 
+        if (window.matchMedia('(max-width: 768px)').matches) {
+            slideshowImage.src = art.images.gallery;
+        } else {
+            slideshowImage.src = art.images.hero.large;
+        }
         artName.textContent = art.name;
         footerArtName.textContent = art.name;
         artistName.textContent = art.artist.name;
@@ -85,11 +90,7 @@ const populateSlideshow = (e, slideGroup, index, paintings) => {
         description.textContent = art.description;
         artYear.textContent = art.year;
         authorImage.src = art.artist.image;
-        if (window.matchMedia('(max-width: 768px)').matches) {
-            slideshowImage.src = art.images.gallery;
-        } else {
-            slideshowImage.src = art.images.hero.large;
-        }
+        
     }
 
     updateSlide();
@@ -166,6 +167,11 @@ const startSlideshow = (slideGroup, paintings) => {
 
         let slide = paintings[currentIndex]
 
+        if (window.matchMedia('(max-width: 768px)').matches) {
+            slideshowImage.src = slide.images.gallery;
+        } else {
+            slideshowImage.src = slide.images.hero.large;
+        }
         artName.textContent = slide.name;
         footerArtName.textContent = slide.name;
         artistName.textContent = slide.artist.name;
@@ -173,11 +179,7 @@ const startSlideshow = (slideGroup, paintings) => {
         description.textContent = slide.description;
         artYear.textContent = slide.year;
         authorImage.src = slide.artist.image;
-        if (window.matchMedia('(max-width: 768px)').matches) {
-            slideshowImage.src = slide.images.gallery;
-        } else {
-            slideshowImage.src = slide.images.hero.large;
-        }
+        
 
         currentIndex++;
 
